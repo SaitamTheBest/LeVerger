@@ -7,6 +7,7 @@ public class De {
 	private Couleur face2;
 	private Couleur face3;
 	private Couleur face4;
+	private Couleur face5
 	
 	public De(Couleur face1, Couleur face2, Couleur face3, Couleur face4) {
 		this.face1 = face1;
