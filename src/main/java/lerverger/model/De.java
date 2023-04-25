@@ -4,15 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class De {
-<<<<<<< Updated upstream
 	private List<Couleur> face;
-=======
-	private Couleur face1;
-	private Couleur face2;
-	private Couleur face3;
-	private Couleur face4;
-	private Couleur face5;
->>>>>>> Stashed changes
 	
 	public De(List<Couleur> face) {
 		this.face = face;
