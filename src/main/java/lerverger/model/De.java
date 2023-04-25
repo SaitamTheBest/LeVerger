@@ -1,36 +1,25 @@
 package lerverger.model;
 
-import java.lang.Math;
+import java.util.ArrayList;
+import java.util.List;
 
 public class De {
-	private Couleur face1;
-	private Couleur face2;
-	private Couleur face3;
-	private Couleur face4;
-	private Couleur face5
+	private List<Couleur> face;
 	
-	public De(Couleur face1, Couleur face2, Couleur face3, Couleur face4) {
-		this.face1 = face1;
-		this.face2 = face2;
-		this.face3 = face3;
-		this.face4 = face4;
+	public De(List<Couleur> face) {
+		this.face = face;
 	}
 	
 	public De() {
-		this(Couleur.BLEU,Couleur.JAUNE,Couleur.ROUGE,Couleur.VERT);
+		this(new ArrayList<>());
+		this.face.add(Couleur.BLEU);
+		this.face.add(Couleur.JAUNE);
+		this.face.add(Couleur.ROUGE);
+		this.face.add(Couleur.VERT);
 	}
 	
 	public Couleur lancer() {
 		int numero = (int)(Math.random()*4);
-		switch(numero) {
-		case 0:
-			return this.face1;
-		case 1:
-			return this.face2;
-		case 2:
-			return this.face3;
-		default:
-			return this.face4;
-		}
+		return this.face.get(numero);
 	}
 }
