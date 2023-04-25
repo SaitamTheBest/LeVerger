@@ -32,7 +32,7 @@ public class Arbre {
 
 	@Override
 	public String toString() {
-		return "Arbre [arbre=" + arbre.size() + ", couleur=" + couleur + "]";
+		return "Un arbre contenant"+ arbre.size() + " fruit(s) "+ couleur + ".";
 	}
 	
 	
