@@ -1,4 +1,4 @@
-package lerverger.model;
+package leverger.model;
 
 import java.util.ArrayList;
 import java.util.List;

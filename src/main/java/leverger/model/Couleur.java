@@ -1,4 +1,4 @@
-package lerverger.model;
+package leverger.model;
 
 public enum Couleur {
 	BLEU,ROUGE,VERT,JAUNE;

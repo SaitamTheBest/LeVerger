@@ -1,4 +1,4 @@
-package lerverger.model;
+package leverger.model;
 
 public class Fruit {
 	private Couleur couleur;
