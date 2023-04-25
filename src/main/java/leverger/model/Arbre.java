@@ -18,6 +18,8 @@ public class Arbre {
 
 	public void remplir() {
 		int nombreDeFruit = 10;
+		int nombreDeFruitActuelle = arbre.size();
+		nombreDeFruit = nombreDeFruit - nombreDeFruitActuelle;
 		for (int compteur = 0; compteur <= nombreDeFruit-1; compteur++) {
 			this.arbre.add(new Fruit(this.couleur));
 		}
@@ -32,7 +34,7 @@ public class Arbre {
 
 	@Override
 	public String toString() {
-		return "Un arbre contenant"+ arbre.size() + " fruit(s) "+ couleur + ".";
+		return "Un arbre contenant "+ arbre.size() + " fruit(s) "+ couleur + ".";
 	}
 	
 	
