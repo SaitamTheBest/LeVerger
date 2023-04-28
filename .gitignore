@@ -7,3 +7,4 @@ bin/.settings/org.eclipse.core.resources.prefs
 bin/pom.xml
 /bin/
 /target/
+.settings/org.eclipse.m2e.core.prefs

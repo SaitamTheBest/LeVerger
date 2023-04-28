@@ -27,5 +27,18 @@ class ArbreTest {
 		arbre.enlever();
 		assertEquals(arbre.toString(), "Un arbre contenant 9 fruit(s) BLEU.");
 	}
+	
+	@Test
+	public void renvoieLeNombreDeFruitDUnArbre() {
+		Arbre arbre = new Arbre(Couleur.BLEU);
+		arbre.remplir();
+		assertEquals(arbre.nombreDeFruit(), 10);
+	}
+	
+	@Test
+	public void renvoieLaCouleurDUnArbre() {
+		Arbre arbre = new Arbre(Couleur.BLEU);
+		assertEquals(arbre.getCouleur(), Couleur.BLEU);
+	}
 
 }

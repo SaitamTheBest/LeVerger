@@ -31,6 +31,14 @@ public class Arbre {
 			arbre.remove(fruit);
 		}
 	}
+	
+	public Couleur getCouleur() {
+		return couleur;
+	}
+	
+	public int nombreDeFruit() {
+		return arbre.size();
+	}
 
 	@Override
 	public String toString() {
