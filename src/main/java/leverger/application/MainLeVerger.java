@@ -133,12 +133,8 @@ public class MainLeVerger extends Application {
 		root.setHgap(20);
 		root.setVgap(20);
 		root.setAlignment(Pos.CENTER);
+		root.setStyle("-fx-background-color: rgb(65,188,60);");
 
-		File fondFichier = new File("image/leverger-fond-image.jpep");
-		Image fondImage = new Image(new FileInputStream(fondFichier));
-		BackgroundImage backgroundImage = new BackgroundImage(fondImage, BackgroundRepeat.REPEAT, BackgroundRepeat.REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
-		root.setBackground(new Background(backgroundImage));
-		
 		Scene scene = new Scene(root, 900, 600);
 		stage.setScene(scene);
 		stage.setTitle("Le Verger");
