@@ -4,8 +4,6 @@ import static org.junit.jupiter.api.Assertions.*;
 import leverger.model.*;
 
 import org.junit.jupiter.api.Test;
-
-import leverger.model.Arbre;
 import leverger.model.Couleur;
 
 class FruitTest {
