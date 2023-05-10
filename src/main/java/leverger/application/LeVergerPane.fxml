@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: rgb(65,150,60); -fx-border-color: brown; -fx-border-width: 10px;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="leverger.controller.LeVergerController">
+	<top>
+		<Label fx:id="titreID" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="600.0" style="-fx-font-size: 20;" text="Le jeu du Verger" textFill="WHITE" BorderPane.alignment="CENTER">
+			<font>
+				<Font name="Comic Sans MS Italic" size="12.0" />
+			</font>
+			<effect>
+				<Glow level="0.54" />
+			</effect>
+		</Label>
+	</top>
+	<cursor>
+		<Cursor fx:constant="DEFAULT" />
+	</cursor>
+	<center>
+		<GridPane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="280.0" prefWidth="600.0" style="-fx-background-color: white; -fx-border-color: brown; -fx-border-width: 5px;" BorderPane.alignment="CENTER">
+			<columnConstraints>
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+			</rowConstraints>
+			<children>
+				<ImageView fitHeight="136.0" fitWidth="136.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../ressource/pommier.png" />
+               </image>
+				</ImageView>
+				<ImageView fitHeight="131.0" fitWidth="144.0" pickOnBounds="true" GridPane.columnIndex="1">
+					<image>
+						<Image url="@../../../ressource/poirier.png" />
+					</image>
+				</ImageView>
+				<ImageView fitHeight="127.0" fitWidth="137.0" pickOnBounds="true" GridPane.columnIndex="2">
+					<image>
+						<Image url="@../../../ressource/prunier.jpg" />
+					</image>
+				</ImageView>
+				<ImageView fitHeight="124.0" fitWidth="132.0" pickOnBounds="true" GridPane.columnIndex="3">
+					<image>
+						<Image url="@../../../ressource/cerisier.jpg" />
+					</image>
+				</ImageView>
+				<Label fx:id="nombreDePommeID" alignment="CENTER" prefHeight="153.0" prefWidth="221.0" text="fruit(s) restants" GridPane.rowIndex="1" />
+				<Label fx:id="nombreDePoireID" alignment="CENTER" prefHeight="153.0" prefWidth="221.0" text="fruit(s) restants" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+				<Label fx:id="nombreDePruneID" alignment="CENTER" prefHeight="153.0" prefWidth="221.0" text="fruit(s) restants" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+				<Label fx:id="nombreDeCeriseID" alignment="CENTER" prefHeight="153.0" prefWidth="221.0" text="fruit(s) restants" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+			</children>
+			<padding>
+				<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+			</padding>
+		</GridPane>
+	</center>
+	<left>
+		<VBox alignment="CENTER" prefHeight="200.0" prefWidth="160.0" style="-fx-padding: 10;" BorderPane.alignment="CENTER">
+			<children>
+				<Circle fx:id="cercleDeID" fill="#fafafa" radius="31.0" stroke="BLACK" strokeType="INSIDE">
+					<VBox.margin>
+						<Insets bottom="10.0" />
+					</VBox.margin>
+				</Circle>
+				<Button fx:id="lancerBouton" alignment="CENTER" mnemonicParsing="false" text="Button">
+					<font>
+						<Font name="Comic Sans MS Bold" size="12.0" />
+					</font>
+					<cursor>
+						<Cursor fx:constant="HAND" />
+					</cursor>
+					<VBox.margin>
+						<Insets top="10.0" />
+					</VBox.margin>
+				</Button>
+			</children>
+		</VBox>
+	</left>
+	<right>
+		<VBox alignment="CENTER" prefHeight="280.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+			<children>
+				<Label alignment="CENTER" contentDisplay="CENTER" prefHeight="28.0" prefWidth="152.0" text="Nombre de lancé :" textFill="WHITE">
+					<font>
+						<Font name="Comic Sans MS" size="15.0" />
+					</font>
+				</Label>
+				<Label fx:id="nombreDeTourID" alignment="CENTER" text="Label" textFill="WHITE">
+					<font>
+						<Font name="Comic Sans MS" size="15.0" />
+					</font>
+				</Label>
+			</children>
+		</VBox>
+	</right>
+	<bottom>
+		<Label alignment="CENTER" prefHeight="56.0" prefWidth="790.0" text="Label" BorderPane.alignment="CENTER" />
+	</bottom>
+</BorderPane>
