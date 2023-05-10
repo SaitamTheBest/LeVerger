@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 
-public class MainLeVerger extends Application {
+public class MainLeVerger extends Application{
 	@Override
 	public void start(Stage stage) throws Exception {
 		BorderPane root = new BorderPane();
