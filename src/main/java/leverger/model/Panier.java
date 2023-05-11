@@ -9,24 +9,23 @@ public class Panier {
 	public Panier(List<Fruit> panier) {
 		this.panier = panier;
 	}
-	
+
 	public Panier() {
 		this(new ArrayList<Fruit>());
 	}
-	
+
 	public void ajout(Fruit fruit) {
 		this.panier.add(fruit);
 	}
-	
+
 	public int taillePanier() {
 		return this.panier.size();
 	}
-	
+
 	public void viderLePanier() {
-		while (!this.panier.isEmpty()){
+		while (!this.panier.isEmpty()) {
 			panier.remove(0);
 		}
 	}
-	
 
 }
