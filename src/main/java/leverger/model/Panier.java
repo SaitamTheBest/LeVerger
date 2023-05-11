@@ -22,5 +22,11 @@ public class Panier {
 		return this.panier.size();
 	}
 	
+	public void viderLePanier() {
+		while (!this.panier.isEmpty()){
+			panier.remove(0);
+		}
+	}
+	
 
 }
