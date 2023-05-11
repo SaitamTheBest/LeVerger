@@ -1,0 +1,10 @@
+
+.classpath
+.project
+.settings/org.eclipse.core.resources.prefs
+.settings/org.eclipse.jdt.core.prefs
+bin/.settings/org.eclipse.core.resources.prefs
+bin/pom.xml
+/bin/
+/target/
+.settings/org.eclipse.m2e.core.prefs

@@ -1,7 +1,7 @@
-package lerverger.model;
+package leverger.model;
 
 public class Fruit {
-	private Couleur couleur;
+	private final Couleur couleur;
 
 	public Fruit(Couleur couleur) {
 		this.couleur = couleur;
@@ -11,7 +11,8 @@ public class Fruit {
 		return couleur;
 	}
 
-	public void setCouleur(Couleur couleur) {
-		this.couleur = couleur;
+	@Override
+	public String toString() {
+		return "Je suis un fruit "+couleur+".";
 	}
 }

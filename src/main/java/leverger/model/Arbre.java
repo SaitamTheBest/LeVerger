@@ -1,4 +1,4 @@
-package lerverger.model;
+package leverger.model;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -18,6 +18,8 @@ public class Arbre {
 
 	public void remplir() {
 		int nombreDeFruit = 10;
+		int nombreDeFruitActuelle = arbre.size();
+		nombreDeFruit = nombreDeFruit - nombreDeFruitActuelle;
 		for (int compteur = 0; compteur <= nombreDeFruit-1; compteur++) {
 			this.arbre.add(new Fruit(this.couleur));
 		}
@@ -29,10 +31,18 @@ public class Arbre {
 			arbre.remove(fruit);
 		}
 	}
+	
+	public Couleur getCouleur() {
+		return couleur;
+	}
+	
+	public int nombreDeFruit() {
+		return arbre.size();
+	}
 
 	@Override
 	public String toString() {
-		return "Arbre [arbre=" + arbre.size() + ", couleur=" + couleur + "]";
+		return "Un arbre contenant "+ arbre.size() + " fruit(s) "+ couleur + ".";
 	}
 	
 	
