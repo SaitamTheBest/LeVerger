@@ -123,6 +123,7 @@ public class LeVergerController {
 		nombreDePoireID.setText(poirier.nombreDeFruit() + " fruit(s) restant(s)");
 		nombreDePruneID.setText(prunier.nombreDeFruit() + " fruit(s) restant(s)");
 		nombreDeCeriseID.setText(cerisier.nombreDeFruit() + " fruit(s) restant(s)");
+		cercleDeID.setFill(Color.WHITE);
 		nombreDeTourID.setText("" + deJoueur.nombreDeTour());
 		lancerBouton.setDisable(false);
 		reessayerBouton.setDisable(true);
