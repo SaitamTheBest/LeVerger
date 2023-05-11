@@ -29,4 +29,9 @@ public class De {
 	public int nombreDeTour() {
 		return compteurDeTour;
 	}
+	
+	public void reinitialiserLeNombreDeTour() {
+		this.compteurDeTour=0;
+	}
+
 }
