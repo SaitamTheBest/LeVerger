@@ -6,39 +6,49 @@ import org.junit.jupiter.api.Test;
 import leverger.model.*;
 
 class ArbreTest {
+	
+	Arbre arbre = new Arbre(Couleur.BLEU);
 
 	@Test
-	public void creerUnArbreVideAvecUneCouleurBleuEtAfficheCesCaracteristiques() {
-		Arbre arbre = new Arbre(Couleur.BLEU);
-		assertEquals(arbre.toString(), "Un arbre contenant 0 fruit(s) BLEU.");
+	void creerUnArbreVideAvecUneCouleurBleuEtAfficheCesCaracteristiques() {
+		String resultat = arbre.toString();
+		assertEquals("Un arbre contenant 0 fruit(s) BLEU.", resultat);
 	}
 	
 	@Test
-	public void remplirUnArbreVideDeDixFruitDeLaCouleurBleuEtAfficheCesCaracteristiques() {
-		Arbre arbre = new Arbre(Couleur.BLEU);
+	void remplirUnArbreVideDeDixFruitDeLaCouleurBleuEtAfficheCesCaracteristiques() {
 		arbre.remplir();
-		assertEquals(arbre.toString(), "Un arbre contenant 10 fruit(s) BLEU.");
+		String resultat = arbre.toString();
+		assertEquals("Un arbre contenant 10 fruit(s) BLEU.", resultat);
 	}
 	
 	@Test
-	public void enleverUnArbreAvecDesFruitDeLaCouleurBleuEtAfficheCesCaracteristiques() {
-		Arbre arbre = new Arbre(Couleur.BLEU);
+	void enleverUnArbreAvecDesFruitDeLaCouleurBleuEtAfficheCesCaracteristiques() {
 		arbre.remplir();
 		arbre.enlever();
-		assertEquals(arbre.toString(), "Un arbre contenant 9 fruit(s) BLEU.");
+		String resultat = arbre.toString();
+		assertEquals("Un arbre contenant 9 fruit(s) BLEU.", resultat);
 	}
 	
 	@Test
-	public void renvoieLeNombreDeFruitDUnArbre() {
-		Arbre arbre = new Arbre(Couleur.BLEU);
+	void renvoieLeNombreDeFruitDUnArbre() {
 		arbre.remplir();
-		assertEquals(arbre.nombreDeFruit(), 10);
+		int resultat = arbre.nombreDeFruit();
+		assertEquals(10, resultat);
 	}
 	
 	@Test
-	public void renvoieLaCouleurDUnArbre() {
-		Arbre arbre = new Arbre(Couleur.BLEU);
-		assertEquals(arbre.getCouleur(), Couleur.BLEU);
+	void renvoieLaCouleurDUnArbre() {
+		Couleur resultat = arbre.getCouleur();
+		assertEquals(Couleur.BLEU, resultat);
+	}
+	
+	@Test
+	void retireUnFruit() {
+		arbre.remplir();
+		arbre.enlever();
+		int resultat = arbre.nombreDeFruit();
+		assertEquals(9, resultat);
 	}
 
 }
