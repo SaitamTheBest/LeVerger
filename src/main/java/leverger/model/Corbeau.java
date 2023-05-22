@@ -30,7 +30,6 @@ public class Corbeau {
             numero = (int)(Math.random()*9);
         }
 		this.faces.get(numero).setFill(Color.TRANSPARENT);
-	}
 	
 	public void reinitialiser() {
 		for (int compteur = 0; compteur <= 8; compteur++) {
