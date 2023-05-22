@@ -15,31 +15,43 @@ import javafx.scene.control.Alert.AlertType;
 public class LeVergerController {
 
 	@FXML
-	private Circle cercleDeID;
+    private Circle cercleDeID;
 
-	@FXML
-	private Button lancerBouton;
+    @FXML
+    private Button lancerBouton;
 
-	@FXML
-	private Button reessayerBouton;
+    @FXML
+    private Label nombreDeCeriseID;
 
-	@FXML
-	private Label nombreDeCeriseID;
+    @FXML
+    private Label nombreDeCerisierPanierID;
 
-	@FXML
-	private Label nombreDePoireID;
+    @FXML
+    private Label nombreDePoireID;
 
-	@FXML
-	private Label nombreDePommeID;
+    @FXML
+    private Label nombreDePoirePanierID;
 
-	@FXML
-	private Label nombreDePruneID;
+    @FXML
+    private Label nombreDePommeID;
 
-	@FXML
-	private Label nombreDeTourID;
+    @FXML
+    private Label nombreDePommePanierID;
 
-	@FXML
-	private Label titreID;
+    @FXML
+    private Label nombreDePruneID;
+
+    @FXML
+    private Label nombreDePrunePanierID;
+
+    @FXML
+    private Label nombreDeTourID;
+
+    @FXML
+    private Button reessayerBouton;
+
+    @FXML
+    private Label titreID;
 
 	// Création Arbre
 	Arbre poirier = new Arbre(Couleur.JAUNE);
@@ -49,6 +61,12 @@ public class LeVergerController {
 
 	// Création Dé
 	De deJoueur = new De();
+	
+	//Création Panier
+	Panier panierPoirier = new Panier();
+	Panier panierPrunier = new Panier();
+	Panier panierCerisier = new Panier();
+	Panier panierPommier = new Panier();
 
 	@FXML
 	public void initialize() {
@@ -58,10 +76,10 @@ public class LeVergerController {
 		pommier.remplir();
 
 		// Label Application
-		nombreDePommeID.setText(pommier.nombreDeFruit() + " fruit(s) restant(s)");
-		nombreDePoireID.setText(poirier.nombreDeFruit() + " fruit(s) restant(s)");
-		nombreDePruneID.setText(prunier.nombreDeFruit() + " fruit(s) restant(s)");
-		nombreDeCeriseID.setText(cerisier.nombreDeFruit() + " fruit(s) restant(s)");
+		nombreDePommeID.setText(pommier.nombreDeFruit() + "");
+		nombreDePoireID.setText(poirier.nombreDeFruit() + "");
+		nombreDePruneID.setText(prunier.nombreDeFruit() + "");
+		nombreDeCeriseID.setText(cerisier.nombreDeFruit() + "");
 
 		// Bouton Reessaye
 		reessayerBouton.setDisable(true);
@@ -76,23 +94,23 @@ public class LeVergerController {
 
 				if (faceDuDe.equals(prunier.getCouleur())) {
 					prunier.enlever();
-					nombreDePruneID.setText(prunier.nombreDeFruit() + " fruit(s) restant(s)");
+					nombreDePruneID.setText(prunier.nombreDeFruit() + "");
 					cercleDeID.setFill(Color.BLUE);
 
 				}
 				if (faceDuDe.equals(poirier.getCouleur())) {
 					poirier.enlever();
-					nombreDePoireID.setText(poirier.nombreDeFruit() + " fruit(s) restant(s)");
+					nombreDePoireID.setText(poirier.nombreDeFruit() + "");
 					cercleDeID.setFill(Color.YELLOW);
 				}
 				if (faceDuDe.equals(cerisier.getCouleur())) {
 					cerisier.enlever();
-					nombreDeCeriseID.setText(cerisier.nombreDeFruit() + " fruit(s) restant(s)");
+					nombreDeCeriseID.setText(cerisier.nombreDeFruit() + "");
 					cercleDeID.setFill(Color.RED);
 				}
 				if (faceDuDe.equals(pommier.getCouleur())) {
 					pommier.enlever();
-					nombreDePommeID.setText(pommier.nombreDeFruit() + " fruit(s) restant(s)");
+					nombreDePommeID.setText(pommier.nombreDeFruit() + "");
 					cercleDeID.setFill(Color.GREEN);
 				}
 
@@ -115,14 +133,21 @@ public class LeVergerController {
 
 	private void handleReessaye() {
 		deJoueur.reinitialiserLeNombreDeTour();
+		
+		panierCerisier.viderLePanier();
+		panierPoirier.viderLePanier();
+		panierPommier.viderLePanier();
+		panierPrunier.viderLePanier();
+		
 		poirier.remplir();
 		pommier.remplir();
 		cerisier.remplir();
 		prunier.remplir();
-		nombreDePommeID.setText(pommier.nombreDeFruit() + " fruit(s) restant(s)");
-		nombreDePoireID.setText(poirier.nombreDeFruit() + " fruit(s) restant(s)");
-		nombreDePruneID.setText(prunier.nombreDeFruit() + " fruit(s) restant(s)");
-		nombreDeCeriseID.setText(cerisier.nombreDeFruit() + " fruit(s) restant(s)");
+		
+		nombreDePommeID.setText(pommier.nombreDeFruit()+"");
+		nombreDePoireID.setText(poirier.nombreDeFruit()+"");
+		nombreDePruneID.setText(prunier.nombreDeFruit() + "");
+		nombreDeCeriseID.setText(cerisier.nombreDeFruit() + "");
 		cercleDeID.setFill(Color.WHITE);
 		nombreDeTourID.setText("" + deJoueur.nombreDeTour());
 		lancerBouton.setDisable(false);
