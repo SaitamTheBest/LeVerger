@@ -4,22 +4,22 @@ import static org.junit.jupiter.api.Assertions.*;
 import leverger.model.*;
 
 import org.junit.jupiter.api.Test;
-
-import leverger.model.Arbre;
 import leverger.model.Couleur;
 
 class FruitTest {
 
+	Fruit fruit = new Fruit(Couleur.BLEU);
+	
 	@Test
-	public void creerUnFruitAvecLaCouleurBleuEtAfficheCesCaracteristiques() {
-		Fruit fruit = new Fruit(Couleur.BLEU);
-		assertEquals(fruit.toString(), "Je suis un fruit BLEU.");
+	void creerUnFruitAvecLaCouleurBleuEtAfficheCesCaracteristiques() {
+		String resultat = fruit.toString();
+		assertEquals("Je suis un fruit BLEU.", resultat);
 	}
 	
 	@Test
-	public void afficheLaCouleurDUnFruit() {
-		Fruit fruit = new Fruit(Couleur.BLEU);
-		assertEquals(fruit.getCouleur(), Couleur.BLEU);
+	void afficheLaCouleurDUnFruit() {
+		Couleur resultat = fruit.getCouleur();
+		assertEquals(Couleur.BLEU, fruit.getCouleur());
 	}
 
 }
