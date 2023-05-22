@@ -28,7 +28,10 @@ public class Corbeau {
 	}
 	
 	public void devoile() {
-		int numero = (int)(Math.random()*9);
+		int numero = (int)(Math.random()*9); 
+		while(this.faces.get(numero)) {
+			numero = (int)(Math.random()*9);
+		}
 		this.faces.set(numero, true);
 	}
 	
