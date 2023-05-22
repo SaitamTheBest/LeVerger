@@ -7,9 +7,13 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 import leverger.model.*;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class LeVergerController {
 
@@ -52,6 +56,33 @@ public class LeVergerController {
 	@FXML
 	private Label titreID;
 
+	@FXML
+	private Rectangle piece0_0Id;
+
+	@FXML
+	private Rectangle piece0_1Id;
+
+	@FXML
+	private Rectangle piece0_2Id;
+
+	@FXML
+	private Rectangle piece1_0Id;
+
+	@FXML
+	private Rectangle piece1_1Id;
+
+	@FXML
+	private Rectangle piece1_2Id;
+
+	@FXML
+	private Rectangle piece2_0Id;
+
+	@FXML
+	private Rectangle piece2_1Id;
+
+	@FXML
+	private Rectangle piece2_2Id;
+
 	// Création Arbre
 	Arbre poirier = new Arbre(Couleur.JAUNE);
 	Arbre prunier = new Arbre(Couleur.BLEU);
@@ -67,12 +98,28 @@ public class LeVergerController {
 	Panier panierCerisier = new Panier();
 	Panier panierPommier = new Panier();
 
+	// Création liste piece corbeau
+	List<Rectangle> pieces = new ArrayList<>();
+
+	// Création corbeau
+	Corbeau corbeau = new Corbeau(pieces);
+
 	@FXML
 	public void initialize() {
 		poirier.remplir();
 		prunier.remplir();
 		cerisier.remplir();
 		pommier.remplir();
+		
+		pieces.add(piece0_0Id);
+		pieces.add(piece0_1Id);
+		pieces.add(piece0_2Id);
+		pieces.add(piece1_0Id);
+		pieces.add(piece1_1Id);
+		pieces.add(piece1_2Id);
+		pieces.add(piece2_0Id);
+		pieces.add(piece2_1Id);
+		pieces.add(piece2_2Id);
 
 		// Label Application Arbre
 		nombreDePommeID.setText(pommier.nombreDeFruit() + "");
@@ -96,7 +143,7 @@ public class LeVergerController {
 
 				Couleur faceDuDe = deJoueur.lancer();
 				nombreDeTourID.setText("" + deJoueur.nombreDeTour());
-
+				
 				if (faceDuDe.equals(prunier.getCouleur())) {
 					panierPrunier.recuperationFruit(prunier);
 					nombreDePruneID.setText(prunier.nombreDeFruit() + "");
@@ -121,6 +168,10 @@ public class LeVergerController {
 					nombreDePommeID.setText(pommier.nombreDeFruit() + "");
 					nombreDePommePanierID.setText(panierPommier.taillePanier() + "");
 					cercleDeID.setFill(Color.GREEN);
+				}
+				if (faceDuDe.equals(Couleur.NOIR)) {
+					cercleDeID.setFill(Color.BLACK);
+					corbeau.devoile();
 				}
 
 				if (prunier.nombreDeFruit() == 0 && poirier.nombreDeFruit() == 0 && cerisier.nombreDeFruit() == 0
@@ -157,15 +208,15 @@ public class LeVergerController {
 		nombreDePoireID.setText(poirier.nombreDeFruit() + "");
 		nombreDePruneID.setText(prunier.nombreDeFruit() + "");
 		nombreDeCeriseID.setText(cerisier.nombreDeFruit() + "");
-		
+
 		nombreDePommePanierID.setText(panierPommier.taillePanier() + "");
 		nombreDePoirePanierID.setText(panierPoirier.taillePanier() + "");
 		nombreDePrunePanierID.setText(panierPrunier.taillePanier() + "");
 		nombreDeCerisePanierID.setText(panierCerisier.taillePanier() + "");
-		
+
 		cercleDeID.setFill(Color.WHITE);
 		nombreDeTourID.setText("" + deJoueur.nombreDeTour());
-		
+
 		lancerBouton.setDisable(false);
 		reessayerBouton.setDisable(true);
 	}

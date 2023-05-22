@@ -10,13 +10,15 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="400.0" prefWidth="800.0" style="-fx-border-color: brown; -fx-border-width: 10px; -fx-background-image: url(fond-verger.png); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="leverger.controller.LeVergerController">
+<BorderPane prefHeight="608.0" prefWidth="920.0" style="-fx-background-size: cover; -fx-background-image: url(fond-verger.png);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="leverger.controller.LeVergerController">
 	<top>
 		<Label fx:id="titreID" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="240.0" style="-fx-font-size: 20;" text="Le jeu du Verger" textFill="WHITE" BorderPane.alignment="CENTER">
 			<font>
@@ -47,7 +49,7 @@
                <children>
       				<ImageView fitHeight="136.0" fitWidth="136.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 60%;">
       					<image>
-      						<Image url="pommier.png" />
+      						<Image url="@pommier.png" />
       					</image>
       				</ImageView>
       				<Label fx:id="nombreDePommeID" alignment="CENTER" prefHeight="150.0" prefWidth="150.0" text="10" textFill="#043e0b">
@@ -61,7 +63,7 @@
                <children>
       				<ImageView fitHeight="131.0" fitWidth="144.0" pickOnBounds="true" style="-fx-opacity: 75%;">
       					<image>
-      						<Image url="poirier.png" />
+      						<Image url="@poirier.png" />
       					</image>
       				</ImageView>
       				<Label fx:id="nombreDePoireID" alignment="CENTER" prefHeight="153.0" prefWidth="221.0" text="10" textFill="#fade0f">
@@ -75,7 +77,7 @@
                <children>
       				<ImageView fitHeight="127.0" fitWidth="137.0" pickOnBounds="true" style="-fx-opacity: 75%;">
       					<image>
-      						<Image url="prunier.jpg" />
+      						<Image url="@prunier.jpg" />
       					</image>
       				</ImageView>
       				<Label fx:id="nombreDePruneID" alignment="CENTER" prefHeight="153.0" prefWidth="221.0" text="10" textFill="#3b239c">
@@ -89,7 +91,7 @@
                <children>
       				<ImageView fitHeight="124.0" fitWidth="132.0" pickOnBounds="true" style="-fx-opacity: 75%;">
       					<image>
-      						<Image url="cerisier.jpg" />
+      						<Image url="@cerisier.jpg" />
       					</image>
       				</ImageView>
       				<Label fx:id="nombreDeCeriseID" alignment="CENTER" prefHeight="153.0" prefWidth="221.0" text="10" textFill="#c71313">
@@ -103,7 +105,7 @@
                <children>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 75%;">
                      <image>
-                        <Image url="panier-pomme.png" />
+                        <Image url="@panier-pomme.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="nombreDePommePanierID" alignment="CENTER" prefHeight="150.0" prefWidth="150.0" text="0" textFill="#043e0b">
@@ -117,7 +119,7 @@
                <children>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 75%;">
                      <image>
-                        <Image url="panier-poire.png" />
+                        <Image url="@panier-poire.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="nombreDePoirePanierID" alignment="CENTER" prefHeight="150.0" prefWidth="150.0" text="0" textFill="#fade0f">
@@ -131,7 +133,7 @@
                <children>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 75%;">
                      <image>
-                        <Image url="panier-prune.png" />
+                        <Image url="@panier-prune.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="nombreDePrunePanierID" alignment="CENTER" prefHeight="150.0" prefWidth="150.0" text="0" textFill="#3b239c">
@@ -145,7 +147,7 @@
                <children>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 75%;">
                      <image>
-                        <Image url="panier-cerise.png" />
+                        <Image url="@panier-cerise.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="nombreDeCerisePanierID" alignment="CENTER" prefHeight="150.0" prefWidth="150.0" text="0" textFill="#c71313">
@@ -199,15 +201,68 @@
 			</children>
 		</VBox>
 	</right>
-	<bottom>
-		<StackPane prefHeight="66.0" prefWidth="920.0" BorderPane.alignment="CENTER">
-			<children>
+   <bottom>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="150.0" prefWidth="200.0">
+               <children>
+                  <Label text="Corbeau puzzle :" textFill="WHITE">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="21.0" />
+                     </font>
+                  </Label>
+                  <StackPane prefHeight="150.0" prefWidth="150.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../ressource/corbeau.png" />
+                           </image>
+                           <StackPane.margin>
+                              <Insets />
+                           </StackPane.margin>
+                        </ImageView>
+                        <GridPane>
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Rectangle fx:id="piece0_1Id" arcHeight="5.0" arcWidth="5.0" fill="#ff7400" height="50.0" stroke="BLACK" strokeType="INSIDE" width="50.0" GridPane.columnIndex="1" />
+                              <Rectangle fx:id="piece0_0Id" arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="50.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+                              <Rectangle fx:id="piece0_2Id" arcHeight="5.0" arcWidth="5.0" fill="#ffce1f" height="50.0" stroke="BLACK" strokeType="INSIDE" width="50.0" GridPane.columnIndex="2" />
+                              <Rectangle fx:id="piece1_0Id" arcHeight="5.0" arcWidth="5.0" fill="#f0ff00" height="50.0" stroke="BLACK" strokeType="INSIDE" width="50.0" GridPane.rowIndex="1" />
+                              <Rectangle fx:id="piece1_1Id" arcHeight="5.0" arcWidth="5.0" fill="#77ff00" height="50.0" stroke="BLACK" strokeType="INSIDE" width="50.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Rectangle fx:id="piece1_2Id" arcHeight="5.0" arcWidth="5.0" fill="#00ff0b" height="50.0" stroke="BLACK" strokeType="INSIDE" width="50.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                              <Rectangle fx:id="piece2_0Id" arcHeight="5.0" arcWidth="5.0" fill="#1fffd0" height="50.0" stroke="BLACK" strokeType="INSIDE" width="50.0" GridPane.rowIndex="2" />
+                              <Rectangle fx:id="piece2_1Id" arcHeight="5.0" arcWidth="5.0" fill="#1fd5ff" height="50.0" stroke="BLACK" strokeType="INSIDE" width="50.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <Rectangle fx:id="piece2_2Id" arcHeight="5.0" arcWidth="5.0" fill="#5b1fff" height="50.0" stroke="BLACK" strokeType="INSIDE" width="50.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </StackPane>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
 				<Button fx:id="reessayerBouton" mnemonicParsing="false" style="-fx-background-color: green; -fx-border-color: white; -fx-border-radius: 2px; -fx-border-width: 2px;" text="Réessayer" textFill="WHITE">
 					<font>
 						<Font name="Comic Sans MS" size="15.0" />
 					</font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
 				</Button>
-			</children>
-		</StackPane>
-	</bottom>
+         </children>
+      </VBox>
+   </bottom>
 </BorderPane>
