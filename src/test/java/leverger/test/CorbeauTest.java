@@ -6,7 +6,10 @@ import leverger.model.Corbeau;
 
 import java.util.List;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+
+import javafx.scene.shape.Rectangle;
 
 class CorbeauTest {
 	Corbeau corbeau = new Corbeau();
@@ -15,17 +18,16 @@ class CorbeauTest {
 	void testCreationCorbeau() {
 		assertEquals(9, corbeau.taille());
 	}
-	
 	@Test
 	void testRecuperationListe() {
-		List <Boolean> faceCorbeau = corbeau.liste();
+		List<Rectangle> faceCorbeau = corbeau.liste();
 		assertTrue(faceCorbeau instanceof List<Boolean>);
 	}
 	
 	@Test
 	void testDevoilement() {
 		corbeau.devoile();
-		List <Boolean> faceCorbeau = corbeau.liste();
+		List<Rectangle> faceCorbeau = corbeau.liste();
 		Boolean retourne = false;
 		for (Boolean bool : faceCorbeau) {
 			if (bool) {
