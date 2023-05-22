@@ -29,7 +29,9 @@ public class Panier {
 	}
 	
 	public void recuperationFruit(Arbre arbre){
-		panier.add(arbre.arbre.get(0));
-		arbre.arbre.remove(0);
+		if (!arbre.arbre.isEmpty()) {
+			panier.add(arbre.arbre.get(0));
+			arbre.arbre.remove(0);
+		}
 	}
 }
