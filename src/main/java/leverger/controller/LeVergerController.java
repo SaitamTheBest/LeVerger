@@ -7,7 +7,6 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import leverger.application.MainLeVerger;
 import leverger.model.*;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
