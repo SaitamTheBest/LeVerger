@@ -13,7 +13,27 @@ class TestDe {
 	void testLancerDet() {
 		De de = new De();
 		Couleur resultat = de.lancer();
-		assertEquals(resultat instanceof Couleur,true);
+		assertTrue(resultat instanceof Couleur);
+		
+	}
+	
+	@Test
+	void testNombreDeTour() {
+		De de = new De();
+		int resultat = de.nombreDeTour();
+		assertEquals(0,resultat);
+		
+	}
+	
+	@Test
+	void testNombreReinitialiserDeTour() {
+		De de = new De();
+		de.lancer();
+		int resultatInt = de.nombreDeTour();
+		de.reinitialiserLeNombreDeTour();
+		int resultatFin = de.nombreDeTour();
+		assertEquals(0,resultatFin);
+		assertEquals(1, resultatInt);
 		
 	}
 
