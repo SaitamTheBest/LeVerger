@@ -47,5 +47,5 @@ class PanierTest {
 		assertEquals(1, resultatPanier);
 		assertEquals(9, resultatArbre);
 	}
-
 }
+
