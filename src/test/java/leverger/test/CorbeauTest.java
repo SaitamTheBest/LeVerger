@@ -38,7 +38,7 @@ class CorbeauTest {
 	}
 	
 	@Test
-	void testDevoilement() {
+	void testDevoilementDUnePiece() {
 		corbeau.devoile();
 		List<Rectangle> faceCorbeau = corbeau.retourneListe();
 		Boolean pieceRetourner = false;
@@ -48,6 +48,41 @@ class CorbeauTest {
 			}
 		}
 		assertTrue(pieceRetourner);
+	}
+	
+	@Test
+	void testDevoilementDePlusieursPieces() {
+		corbeau.devoile();
+		corbeau.devoile();
+		corbeau.devoile();
+		List<Rectangle> faceCorbeau = corbeau.retourneListe();
+		int nombreDeFaceDevoiler = 0;
+		for (Rectangle piece : faceCorbeau) {
+			if (piece.getFill().equals(DEVOILE_PIECE)) {
+				nombreDeFaceDevoiler++;
+			}
+		}
+		assertEquals(3, nombreDeFaceDevoiler);
+	}
+	
+	@Test
+	void testDevoilementDUnePieceAlorsQueLesPiecesSontToutesDevoiles() {
+		//Dévoile toutes les pièces
+		for (int compteur = 0;compteur<9;compteur++) {
+			corbeau.devoile();
+		}
+		boolean toutEstDevoile = corbeau.toutEstDevoile();
+		boolean peutDevoilerPieces = corbeau.devoile();
+		List<Rectangle> faceCorbeau = corbeau.retourneListe();
+		int nombreDeFaceDevoiler = 0;
+		for (Rectangle piece : faceCorbeau) {
+			if (piece.getFill().equals(DEVOILE_PIECE)) {
+				nombreDeFaceDevoiler++;
+			}
+		}
+		assertFalse(peutDevoilerPieces);
+		assertEquals(9, nombreDeFaceDevoiler);
+		assertTrue(toutEstDevoile);
 	}
 	
 	@Test
