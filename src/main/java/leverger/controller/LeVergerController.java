@@ -169,11 +169,20 @@ public class LeVergerController {
 					nombreDePommePanierID.setText(panierPommier.taillePanier() + "");
 					cercleDeID.setFill(Color.GREEN);
 				}
-				if (faceDuDe.equals(Couleur.NOIR)) {
+				if (faceDuDe.equals(Couleur.NOIR) && !corbeau.toutEstDevoile()) {
 					cercleDeID.setFill(Color.BLACK);
 					corbeau.devoile();
 				}
-
+				
+				if (corbeau.toutEstDevoile()) {
+					Alert alertGagner = new Alert(AlertType.WARNING);
+					alertGagner.setTitle("Résultat du jeu");
+					alertGagner.setHeaderText("Vous avez perdu à partir la manche " + deJoueur.nombreDeTour() + " !");
+					alertGagner.showAndWait();
+					lancerBouton.setDisable(true);
+					reessayerBouton.setDisable(false);
+				}
+				
 				if (prunier.nombreDeFruit() == 0 && poirier.nombreDeFruit() == 0 && cerisier.nombreDeFruit() == 0
 						&& pommier.nombreDeFruit() == 0) {
 					// Alerts gagnant
@@ -203,6 +212,8 @@ public class LeVergerController {
 		pommier.remplir();
 		cerisier.remplir();
 		prunier.remplir();
+		
+		corbeau.reinitialiser();
 
 		nombreDePommeID.setText(pommier.nombreDeFruit() + "");
 		nombreDePoireID.setText(poirier.nombreDeFruit() + "");

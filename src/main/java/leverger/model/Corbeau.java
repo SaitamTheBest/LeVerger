@@ -32,11 +32,19 @@ public class Corbeau {
 		this.faces.get(compteur).setFill(Color.TRANSPARENT);
 	}
 	
-	public void reinitialiser() {
-		for (int compteur = 0; compteur <= 8; compteur++) {
-			if (!faces.get(compteur).getFill().equals(Color.TRANSPARENT)) {
-				this.faces.get(compteur).setFill(Color.BLUE);;
+	public boolean toutEstDevoile() {
+		boolean estDevoile = true;
+		for (Rectangle rectangle : faces) {
+			if (!rectangle.getFill().equals(Color.TRANSPARENT)) {
+				estDevoile = false;
 			}
+		}
+		return estDevoile;
+	}
+	
+	public void reinitialiser() {
+		for (Rectangle rectangle : faces) {
+			rectangle.setFill(Color.YELLOW);
 		}
 	}
 
