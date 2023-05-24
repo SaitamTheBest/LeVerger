@@ -25,11 +25,12 @@ public class Corbeau {
 	}
 	
 	public void devoile() {
-		int numero = (int)(Math.random()*9); 
-        while(this.faces.get(numero).getFill().equals(Color.TRANSPARENT)) {
-            numero = (int)(Math.random()*9);
+		int compteur = (int)(Math.random()*9); 
+        while(this.faces.get(compteur).getFill().equals(Color.TRANSPARENT)) {
+            compteur = (int)(Math.random()*9);
         }
-		this.faces.get(numero).setFill(Color.TRANSPARENT);
+		this.faces.get(compteur).setFill(Color.TRANSPARENT);
+	}
 	
 	public void reinitialiser() {
 		for (int compteur = 0; compteur <= 8; compteur++) {
