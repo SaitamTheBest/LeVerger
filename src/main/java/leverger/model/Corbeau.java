@@ -20,7 +20,7 @@ public class Corbeau {
 		return this.faces.size();
 	}
 	
-	public List<Rectangle> liste(){
+	public List<Rectangle> retourneListe(){
 		return this.faces;
 	}
 	
