@@ -17,6 +17,8 @@ import java.util.Arrays;
 
 public class LeVergerController {
 
+	private static final Couleur PRENDRE_DEUX_FRUITS = Couleur.MARRON;
+
 	@FXML
 	private Circle cercleDeID;
 
@@ -55,6 +57,18 @@ public class LeVergerController {
 
 	@FXML
 	private Label titreID;
+
+	@FXML
+	private Rectangle indicateurCerisierId;
+
+	@FXML
+	private Rectangle indicateurPoirierId;
+
+	@FXML
+	private Rectangle indicateurPommierId;
+
+	@FXML
+	private Rectangle indicateurPrunierId;
 
 	@FXML
 	private Rectangle piece0_0Id;
@@ -106,11 +120,13 @@ public class LeVergerController {
 
 	@FXML
 	public void initialize() {
+		// Remplir les arbres
 		poirier.remplir();
 		prunier.remplir();
 		cerisier.remplir();
 		pommier.remplir();
-		
+
+		// Rajoute les pièces du puzzle
 		pieces.add(piece0_0Id);
 		pieces.add(piece0_1Id);
 		pieces.add(piece0_2Id);
@@ -120,6 +136,12 @@ public class LeVergerController {
 		pieces.add(piece2_0Id);
 		pieces.add(piece2_1Id);
 		pieces.add(piece2_2Id);
+
+		// Cache les indicateurs
+		indicateurPommierId.setVisible(false);
+		indicateurPoirierId.setVisible(false);
+		indicateurPrunierId.setVisible(false);
+		indicateurCerisierId.setVisible(false);
 
 		// Label Application Arbre
 		nombreDePommeID.setText(pommier.nombreDeFruit() + "");
@@ -145,36 +167,55 @@ public class LeVergerController {
 				nombreDeTourID.setText("" + deJoueur.nombreDeTour());
 
 				if (faceDuDe.equals(prunier.getCouleur())) {
-					panierPrunier.recuperationFruit(prunier);
-					nombreDePruneID.setText(prunier.nombreDeFruit() + "");
-					nombreDePrunePanierID.setText(panierPrunier.taillePanier() + "");
 					cercleDeID.setFill(Color.BLUE);
+					lancerBouton.setDisable(true);
+					indicateurPrunierId.setVisible(true);
+					indicateurPrunierId.setOnMouseClicked(event -> ajouterPrunier(event));
 
 				}
 				if (faceDuDe.equals(poirier.getCouleur())) {
-					panierPoirier.recuperationFruit(poirier);
-					nombreDePoireID.setText(poirier.nombreDeFruit() + "");
-					nombreDePoirePanierID.setText(panierPoirier.taillePanier() + "");
 					cercleDeID.setFill(Color.YELLOW);
+					lancerBouton.setDisable(true);
+					indicateurPoirierId.setVisible(true);
+					indicateurPoirierId.setOnMouseClicked(event -> ajouterPoirier(event));
 				}
 				if (faceDuDe.equals(cerisier.getCouleur())) {
-					panierCerisier.recuperationFruit(cerisier);
-					nombreDeCeriseID.setText(cerisier.nombreDeFruit() + "");
-					nombreDeCerisePanierID.setText(panierCerisier.taillePanier() + "");
 					cercleDeID.setFill(Color.RED);
+					lancerBouton.setDisable(true);
+					indicateurCerisierId.setVisible(true);
+					indicateurCerisierId.setOnMouseClicked(event -> ajouterCerisier(event));
 				}
 				if (faceDuDe.equals(pommier.getCouleur())) {
-					panierPommier.recuperationFruit(pommier);
-					nombreDePommeID.setText(pommier.nombreDeFruit() + "");
-					nombreDePommePanierID.setText(panierPommier.taillePanier() + "");
 					cercleDeID.setFill(Color.GREEN);
+					lancerBouton.setDisable(true);
+					indicateurPommierId.setVisible(true);
+					indicateurPommierId.setOnMouseClicked(event -> ajouterPommier(event));
+				}
+
+				if (faceDuDe.equals(PRENDRE_DEUX_FRUITS)) {
+					cercleDeID.setFill(Color.BROWN);
+					lancerBouton.setDisable(true);
+					
+					lancerBouton.setDisable(true);
+					indicateurPommierId.setVisible(true);
+					indicateurPoirierId.setVisible(true);
+					indicateurPrunierId.setVisible(true);
+					indicateurCerisierId.setVisible(true);
+					
+					//TODO faire une liste qui vérifie que deux fruits sont clickés?
+					
+					indicateurPommierId.setOnMouseClicked(event -> ajouterPommier(event));
+					indicateurPoirierId.setOnMouseClicked(event -> ajouterPoirier(event));
+					indicateurPrunierId.setOnMouseClicked(event -> ajouterPrunier(event));
+					indicateurCerisierId.setOnMouseClicked(event -> ajouterCerisier(event));
+
 				}
 
 				if (faceDuDe.equals(Couleur.NOIR) && !corbeau.toutEstDevoile()) {
 					cercleDeID.setFill(Color.BLACK);
 					corbeau.devoile();
 				}
-				
+
 				if (corbeau.toutEstDevoile()) {
 					Alert alertGagner = new Alert(AlertType.WARNING);
 					alertGagner.setTitle("Résultat du jeu");
@@ -213,7 +254,7 @@ public class LeVergerController {
 		pommier.remplir();
 		cerisier.remplir();
 		prunier.remplir();
-		
+
 		corbeau.reinitialiser();
 
 		nombreDePommeID.setText(pommier.nombreDeFruit() + "");
@@ -231,6 +272,50 @@ public class LeVergerController {
 
 		lancerBouton.setDisable(false);
 		reessayerBouton.setDisable(true);
+	}
+
+	@FXML
+	void ajouterCerisier(MouseEvent event) {
+		if (cerisier.nombreDeFruit() != 0) {
+			panierCerisier.recuperationFruit(cerisier);
+			nombreDeCeriseID.setText(cerisier.nombreDeFruit() + "");
+			nombreDeCerisePanierID.setText(panierCerisier.taillePanier() + "");
+		}
+		indicateurCerisierId.setVisible(false);
+		lancerBouton.setDisable(false);
+	}
+
+	@FXML
+	void ajouterPoirier(MouseEvent event) {
+		if (poirier.nombreDeFruit() != 0) {
+			panierPoirier.recuperationFruit(poirier);
+			nombreDePoireID.setText(poirier.nombreDeFruit() + "");
+			nombreDePoirePanierID.setText(panierPoirier.taillePanier() + "");
+		}
+		indicateurPoirierId.setVisible(false);
+		lancerBouton.setDisable(false);
+	}
+
+	@FXML
+	void ajouterPommier(MouseEvent event) {
+		if (pommier.nombreDeFruit() != 0) {
+			panierPommier.recuperationFruit(pommier);
+			nombreDePommeID.setText(pommier.nombreDeFruit() + "");
+			nombreDePommePanierID.setText(panierPommier.taillePanier() + "");
+		}
+		indicateurPommierId.setVisible(false);
+		lancerBouton.setDisable(false);
+	}
+
+	@FXML
+	void ajouterPrunier(MouseEvent event) {
+		if (prunier.nombreDeFruit() != 0) {
+			panierPrunier.recuperationFruit(prunier);
+			nombreDePruneID.setText(prunier.nombreDeFruit() + "");
+			nombreDePrunePanierID.setText(panierPrunier.taillePanier() + "");
+		}
+		indicateurPrunierId.setVisible(false);
+		lancerBouton.setDisable(false);
 	}
 
 }
