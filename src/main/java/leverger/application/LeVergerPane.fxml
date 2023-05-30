@@ -258,14 +258,29 @@
                   <Insets bottom="10.0" top="10.0" />
                </VBox.margin>
             </HBox>
-				<Button fx:id="reessayerBouton" mnemonicParsing="false" style="-fx-background-color: green; -fx-border-color: white; -fx-border-radius: 2px; -fx-border-width: 2px;" text="Réessayer" textFill="WHITE">
-					<font>
-						<Font name="Comic Sans MS" size="15.0" />
-					</font>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="quitterBouton" mnemonicParsing="false" onAction="#quitter" style="-fx-background-color: green; -fx-border-color: white; -fx-border-radius: 2px; -fx-border-width: 2px;" text="Quitter" textFill="WHITE">
+                     <font>
+                        <Font name="Comic Sans MS" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+      				<Button fx:id="reessayerBouton" mnemonicParsing="false" style="-fx-background-color: green; -fx-border-color: white; -fx-border-radius: 2px; -fx-border-width: 2px;" text="Réessayer" textFill="WHITE">
+      					<font>
+      						<Font name="Comic Sans MS" size="15.0" />
+      					</font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+      				</Button>
+               </children>
                <VBox.margin>
-                  <Insets bottom="20.0" />
+                  <Insets bottom="10.0" top="10.0" />
                </VBox.margin>
-				</Button>
+            </HBox>
          </children>
       </VBox>
    </bottom>

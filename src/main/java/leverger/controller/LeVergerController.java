@@ -1,5 +1,7 @@
 package leverger.controller;
 
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -54,6 +56,9 @@ public class LeVergerController {
 
 	@FXML
 	private Button reessayerBouton;
+	
+	@FXML
+	private Button quitterBouton;
 
 	@FXML
 	private Label titreID;
@@ -317,5 +322,10 @@ public class LeVergerController {
 		indicateurPrunierId.setVisible(false);
 		lancerBouton.setDisable(false);
 	}
+	
+	@FXML
+    void quitter(ActionEvent event) {
+		Platform.exit();
+    }
 
 }
