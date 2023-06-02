@@ -356,7 +356,8 @@ public class LeVergerController {
 			} else if (event.getSource().equals(indicateurPommierId)) {
 				ajouterPommier();
 			}
-
+			
+			afficherLesIndicateurs();
 			nombreDeFruitPris++;
 
 			if (nombreDeFruitPris >= NOMBRE_DE_FRUIT_PRIS_MAX) {
