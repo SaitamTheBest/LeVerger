@@ -18,7 +18,6 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane prefHeight="608.0" prefWidth="920.0" style="-fx-background-size: cover; -fx-background-image: url(fond-verger.png);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="leverger.controller.LeVergerController">
 	<top>
 		<Label fx:id="titreID" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="240.0" style="-fx-font-size: 20;" text="Le jeu du Verger" textFill="WHITE" BorderPane.alignment="CENTER">
@@ -34,7 +33,7 @@
 		<Cursor fx:constant="DEFAULT" />
 	</cursor>
 	<center>
-		<GridPane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="280.0" prefWidth="600.0" style="-fx-background-color: white; -fx-border-color: rgb(153,76,0); -fx-border-width: 1px;" BorderPane.alignment="CENTER">
+		<GridPane alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="280.0" prefWidth="600.0" style="-fx-border-color: black; -fx-border-width: 2px; -fx-background-color: white;" BorderPane.alignment="CENTER">
 			<columnConstraints>
 				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
 				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -48,7 +47,7 @@
 			<children>
             <StackPane prefHeight="150.0" prefWidth="200.0">
                <children>
-      				<ImageView fitHeight="136.0" fitWidth="136.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 60%;">
+      				<ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 60%;">
       					<image>
       						<Image url="pommier.png" />
       					</image>
@@ -58,20 +57,22 @@
       						<Font name="Comic Sans MS Bold" size="70.0" />
       					</font>
       				</Label>
+                  <Rectangle fx:id="indicateurPommierId" arcHeight="5.0" arcWidth="5.0" fill="#2197ff00" height="150.0" stroke="ORANGE" strokeType="INSIDE" strokeWidth="3.0" width="150.0" />
                </children>
             </StackPane>
             <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1">
                <children>
-      				<ImageView fitHeight="131.0" fitWidth="144.0" pickOnBounds="true" style="-fx-opacity: 75%;">
+      				<ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" style="-fx-opacity: 75%;">
       					<image>
       						<Image url="poirier.png" />
       					</image>
       				</ImageView>
-      				<Label fx:id="nombreDePoireID" alignment="CENTER" prefHeight="153.0" prefWidth="221.0" text="10" textFill="#fade0f">
+      				<Label fx:id="nombreDePoireID" alignment="CENTER" prefHeight="150.0" prefWidth="150.0" text="10" textFill="#fade0f">
       					<font>
       						<Font name="Comic Sans MS Bold" size="70.0" />
       					</font>
       				</Label>
+                  <Rectangle fx:id="indicateurPoirierId" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="150.0" stroke="ORANGE" strokeType="INSIDE" strokeWidth="3.0" width="150.0" />
                </children>
             </StackPane>
             <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2">
@@ -81,11 +82,12 @@
       						<Image url="prunier.jpg" />
       					</image>
       				</ImageView>
-      				<Label fx:id="nombreDePruneID" alignment="CENTER" prefHeight="153.0" prefWidth="221.0" text="10" textFill="#3b239c">
+      				<Label fx:id="nombreDePruneID" alignment="CENTER" prefHeight="150.0" prefWidth="150.0" text="10" textFill="#3b239c">
       					<font>
       						<Font name="Comic Sans MS Bold" size="70.0" />
       					</font>
       				</Label>
+                  <Rectangle fx:id="indicateurPrunierId" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="150.0" stroke="ORANGE" strokeType="INSIDE" strokeWidth="3.0" width="150.0" />
                </children>
             </StackPane>
             <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="3">
@@ -95,11 +97,12 @@
       						<Image url="cerisier.jpg" />
       					</image>
       				</ImageView>
-      				<Label fx:id="nombreDeCeriseID" alignment="CENTER" prefHeight="153.0" prefWidth="221.0" text="10" textFill="#c71313">
+      				<Label fx:id="nombreDeCeriseID" alignment="CENTER" prefHeight="150.0" prefWidth="150.0" text="10" textFill="#c71313">
       					<font>
       						<Font name="Comic Sans MS Bold" size="70.0" />
       					</font>
       				</Label>
+                  <Rectangle fx:id="indicateurCerisierId" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="150.0" stroke="ORANGE" strokeType="INSIDE" strokeWidth="3.0" width="150.0" />
                </children>
             </StackPane>
             <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.rowIndex="1">
@@ -160,18 +163,28 @@
             </StackPane>
 			</children>
 			<padding>
-				<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+				<Insets bottom="10.0" top="10.0" />
 			</padding>
 		</GridPane>
 	</center>
 	<left>
 		<VBox alignment="CENTER" prefHeight="200.0" prefWidth="160.0" style="-fx-padding: 10;" BorderPane.alignment="CENTER">
 			<children>
-				<Circle fx:id="cercleDeID" fill="#fafafa" radius="31.0" stroke="BLACK" strokeType="INSIDE">
-					<VBox.margin>
-						<Insets bottom="10.0" />
-					</VBox.margin>
-				</Circle>
+            <StackPane prefHeight="100.0" prefWidth="100.0">
+               <children>
+      				<Circle fx:id="cercleDeID" fill="#fafafa" radius="48.0" stroke="BLACK" strokeType="INSIDE" />
+                  <ImageView fx:id="imagePanierDeId" fitHeight="91.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="panier.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imageCorbeauDeId" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="corbeau-seul.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
 				<Button fx:id="lancerBouton" alignment="CENTER" mnemonicParsing="false" style="-fx-background-color: green; -fx-border-color: white; -fx-border-radius: 2px; -fx-border-width: 2px;" text="Lancer le dé" textFill="WHITE">
 					<font>
 						<Font name="Comic Sans MS Bold" size="12.0" />
@@ -255,14 +268,29 @@
                   <Insets bottom="10.0" top="10.0" />
                </VBox.margin>
             </HBox>
-				<Button fx:id="reessayerBouton" mnemonicParsing="false" style="-fx-background-color: green; -fx-border-color: white; -fx-border-radius: 2px; -fx-border-width: 2px;" text="Réessayer" textFill="WHITE">
-					<font>
-						<Font name="Comic Sans MS" size="15.0" />
-					</font>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="quitterBouton" mnemonicParsing="false" onAction="#quitter" style="-fx-background-color: green; -fx-border-color: white; -fx-border-radius: 2px; -fx-border-width: 2px;" text="Quitter" textFill="WHITE">
+                     <font>
+                        <Font name="Comic Sans MS" size="15.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+      				<Button fx:id="reessayerBouton" mnemonicParsing="false" style="-fx-background-color: green; -fx-border-color: white; -fx-border-radius: 2px; -fx-border-width: 2px;" text="Réessayer" textFill="WHITE">
+      					<font>
+      						<Font name="Comic Sans MS" size="15.0" />
+      					</font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+      				</Button>
+               </children>
                <VBox.margin>
-                  <Insets bottom="20.0" />
+                  <Insets bottom="10.0" top="10.0" />
                </VBox.margin>
-				</Button>
+            </HBox>
          </children>
       </VBox>
    </bottom>

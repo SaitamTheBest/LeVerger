@@ -19,10 +19,11 @@ public class De {
 		this.face.add(Couleur.ROUGE);
 		this.face.add(Couleur.VERT);
 		this.face.add(Couleur.NOIR);
+		this.face.add(Couleur.MARRON);
 	}
 	
 	public Couleur lancer() {
-		int numero = (int)(Math.random()*5);
+		int numero = (int)(Math.random()*this.face.size());
 		this.compteurDeTour++;
 		return this.face.get(numero);
 	}
