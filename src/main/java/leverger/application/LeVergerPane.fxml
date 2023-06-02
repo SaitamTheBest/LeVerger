@@ -49,7 +49,7 @@
                <children>
       				<ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 60%;">
       					<image>
-      						<Image url="@pommier.png" />
+      						<Image url="pommier.png" />
       					</image>
       				</ImageView>
       				<Label fx:id="nombreDePommeID" alignment="CENTER" prefHeight="150.0" prefWidth="150.0" text="10" textFill="#043e0b">
@@ -57,14 +57,14 @@
       						<Font name="Comic Sans MS Bold" size="70.0" />
       					</font>
       				</Label>
-                  <Rectangle fx:id="indicateurPommierId" arcHeight="5.0" arcWidth="5.0" fill="#2197ff00" height="150.0" onMouseClicked="#ajouterPommier" stroke="ORANGE" strokeType="INSIDE" strokeWidth="3.0" width="150.0" />
+                  <Rectangle fx:id="indicateurPommierId" arcHeight="5.0" arcWidth="5.0" fill="#2197ff00" height="150.0" stroke="ORANGE" strokeType="INSIDE" strokeWidth="3.0" width="150.0" />
                </children>
             </StackPane>
             <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1">
                <children>
       				<ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" style="-fx-opacity: 75%;">
       					<image>
-      						<Image url="@poirier.png" />
+      						<Image url="poirier.png" />
       					</image>
       				</ImageView>
       				<Label fx:id="nombreDePoireID" alignment="CENTER" prefHeight="150.0" prefWidth="150.0" text="10" textFill="#fade0f">
@@ -72,14 +72,14 @@
       						<Font name="Comic Sans MS Bold" size="70.0" />
       					</font>
       				</Label>
-                  <Rectangle fx:id="indicateurPoirierId" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="150.0" onMouseClicked="#ajouterPoirier" stroke="ORANGE" strokeType="INSIDE" strokeWidth="3.0" width="150.0" />
+                  <Rectangle fx:id="indicateurPoirierId" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="150.0" stroke="ORANGE" strokeType="INSIDE" strokeWidth="3.0" width="150.0" />
                </children>
             </StackPane>
             <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="2">
                <children>
       				<ImageView fitHeight="127.0" fitWidth="137.0" pickOnBounds="true" style="-fx-opacity: 75%;">
       					<image>
-      						<Image url="@prunier.jpg" />
+      						<Image url="prunier.jpg" />
       					</image>
       				</ImageView>
       				<Label fx:id="nombreDePruneID" alignment="CENTER" prefHeight="150.0" prefWidth="150.0" text="10" textFill="#3b239c">
@@ -87,14 +87,14 @@
       						<Font name="Comic Sans MS Bold" size="70.0" />
       					</font>
       				</Label>
-                  <Rectangle fx:id="indicateurPrunierId" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="150.0" onMouseClicked="#ajouterPrunier" stroke="ORANGE" strokeType="INSIDE" strokeWidth="3.0" width="150.0" />
+                  <Rectangle fx:id="indicateurPrunierId" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="150.0" stroke="ORANGE" strokeType="INSIDE" strokeWidth="3.0" width="150.0" />
                </children>
             </StackPane>
             <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="3">
                <children>
       				<ImageView fitHeight="124.0" fitWidth="132.0" pickOnBounds="true" style="-fx-opacity: 75%;">
       					<image>
-      						<Image url="@cerisier.jpg" />
+      						<Image url="cerisier.jpg" />
       					</image>
       				</ImageView>
       				<Label fx:id="nombreDeCeriseID" alignment="CENTER" prefHeight="150.0" prefWidth="150.0" text="10" textFill="#c71313">
@@ -102,14 +102,14 @@
       						<Font name="Comic Sans MS Bold" size="70.0" />
       					</font>
       				</Label>
-                  <Rectangle fx:id="indicateurCerisierId" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="150.0" onMouseClicked="#ajouterCerisier" stroke="ORANGE" strokeType="INSIDE" strokeWidth="3.0" width="150.0" />
+                  <Rectangle fx:id="indicateurCerisierId" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff00" height="150.0" stroke="ORANGE" strokeType="INSIDE" strokeWidth="3.0" width="150.0" />
                </children>
             </StackPane>
             <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.rowIndex="1">
                <children>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 75%;">
                      <image>
-                        <Image url="@panier-pomme.png" />
+                        <Image url="panier-pomme.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="nombreDePommePanierID" alignment="CENTER" prefHeight="150.0" prefWidth="150.0" text="0" textFill="#043e0b">
@@ -123,7 +123,7 @@
                <children>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 75%;">
                      <image>
-                        <Image url="@panier-poire.png" />
+                        <Image url="panier-poire.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="nombreDePoirePanierID" alignment="CENTER" prefHeight="150.0" prefWidth="150.0" text="0" textFill="#fade0f">
@@ -137,7 +137,7 @@
                <children>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 75%;">
                      <image>
-                        <Image url="@panier-prune.png" />
+                        <Image url="panier-prune.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="nombreDePrunePanierID" alignment="CENTER" prefHeight="150.0" prefWidth="150.0" text="0" textFill="#3b239c">
@@ -151,7 +151,7 @@
                <children>
                   <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 75%;">
                      <image>
-                        <Image url="@panier-cerise.png" />
+                        <Image url="panier-cerise.png" />
                      </image>
                   </ImageView>
                   <Label fx:id="nombreDeCerisePanierID" alignment="CENTER" prefHeight="150.0" prefWidth="150.0" text="0" textFill="#c71313">
@@ -170,11 +170,21 @@
 	<left>
 		<VBox alignment="CENTER" prefHeight="200.0" prefWidth="160.0" style="-fx-padding: 10;" BorderPane.alignment="CENTER">
 			<children>
-				<Circle fx:id="cercleDeID" fill="#fafafa" radius="31.0" stroke="BLACK" strokeType="INSIDE">
-					<VBox.margin>
-						<Insets bottom="10.0" />
-					</VBox.margin>
-				</Circle>
+            <StackPane prefHeight="100.0" prefWidth="100.0">
+               <children>
+      				<Circle fx:id="cercleDeID" fill="#fafafa" radius="48.0" stroke="BLACK" strokeType="INSIDE" />
+                  <ImageView fx:id="imagePanierDeId" fitHeight="91.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="panier.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imageCorbeauDeId" fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="corbeau-seul.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
 				<Button fx:id="lancerBouton" alignment="CENTER" mnemonicParsing="false" style="-fx-background-color: green; -fx-border-color: white; -fx-border-radius: 2px; -fx-border-width: 2px;" text="Lancer le dé" textFill="WHITE">
 					<font>
 						<Font name="Comic Sans MS Bold" size="12.0" />
@@ -219,7 +229,7 @@
                      <children>
                         <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@corbeau.png" />
+                              <Image url="corbeau.png" />
                            </image>
                            <StackPane.margin>
                               <Insets />
