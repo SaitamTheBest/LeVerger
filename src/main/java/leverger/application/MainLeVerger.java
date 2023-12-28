@@ -1,7 +1,9 @@
 package leverger.application;
 
+
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +17,8 @@ public class MainLeVerger extends Application{
 		root.setCenter(content);
 		Scene scene = new Scene(root);
 		stage.setScene(scene);
+		stage.setTitle("Jeu du verger");
+		stage.getIcons().add(new Image(MainLeVerger.class.getResourceAsStream("/corbeau.png")));
 		stage.show();
 	}
 
