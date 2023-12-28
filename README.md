@@ -9,7 +9,7 @@ Ce projet a été réalisé en binome :
 * **Ethan LACHAUD ([@ethanLACHAUD](https://github.com/EthanLACHAUD/EthanLACHAUD))**
 * **Matias DEVEZE ([@SaitamTheBest](https://github.com/SaitamTheBest))**
 
-## Screenshots
+## Screenshot
 
 ![capture-leverger](https://github.com/SaitamTheBest/LeVerger/blob/master/images-readme/capture-le-verger.png?raw=true)
 
