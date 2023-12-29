@@ -6,7 +6,7 @@
 Le jeu est codé uniquement en Java et utilise JavaFX ainsi que Scene Builder pour réalisé l'IHM.
 ## Auteurs
 Ce projet a été réalisé en binome : 
-* **Ethan LACHAUD ([@ethanLACHAUD](https://github.com/EthanLACHAUD/EthanLACHAUD))**
+* **Ethan LACHAUD ([@ethanLACHAUD](https://github.com/EthanLACHAUD))**
 * **Matias DEVEZE ([@SaitamTheBest](https://github.com/SaitamTheBest))**
 
 ## Screenshot
